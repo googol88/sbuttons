@@ -1,0 +1,98 @@
+.iso-variant(@color) {
+  background-color: @color;
+  &::before {
+    background-color: darken(@color, 3%);
+  }
+  &::after {
+    background-color: lighten(@color, 5%);
+  }
+  &:hover {
+    background-color: lighten(@color, 3%);
+    &::before {
+      background-color: lighten(darken(@color, 3%), 3%);
+    }
+    &::after {
+      background-color: lighten(lighten(@color, 5%), 3%);
+    }
+  }
+}
+.iso-btn {
+  transition: all 0.25s ease-out;
+  transform: translateY(-1em) rotate(-30deg) skewX(30deg);
+  border: none;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1.5em;
+    left: -0.75em;
+    bottom: -1.5em;
+    transform: skewX(-45deg);
+    transition: all 0.25s ease-out;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 100%;
+    left: -1.5em;
+    bottom: -0.75em;
+    transform: skewY(-45deg);
+    transition: all 0.25s ease-out;
+  }
+
+  &:active {
+    transform: translateY(0) rotate(-30deg) skewX(30deg);
+    &::after {
+      height: 0.5em;
+      left: -0.25em;
+      bottom: -0.5em;
+    }
+    &::before {
+      width: 0.5em;
+      left: -0.5em;
+      bottom: -0.25em;
+    }
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+
+  &.pink-btn {
+    .iso-variant(@pink);
+  }
+
+  &.blue-btn {
+    .iso-variant(@blue);
+  }
+
+  &.red-btn {
+    .iso-variant(@red);
+  }
+
+  &.green-btn {
+    .iso-variant(@green);
+  }
+
+  &.yellow-btn {
+    .iso-variant(@yellow);
+  }
+
+  &.orange-btn {
+    .iso-variant(@orange);
+  }
+
+  &.purple-btn {
+    .iso-variant(@purple);
+  }
+
+  &.black-btn {
+    .iso-variant(@diffblack);
+  }
+
+  &.white-btn {
+    .iso-variant(@diffwhite);
+  }
+}

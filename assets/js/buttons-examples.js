@@ -61,12 +61,6 @@ $(document).ready(function () {
           classes: "disabled-btn",
         },
         {
-          type: "gradient",
-          label: "Gradient",
-          classes: "gradient-btn",
-        },
-
-        {
           type: "xsmall",
           label: "Extra-small",
           classes: "xsmall-btn",
@@ -94,6 +88,12 @@ $(document).ready(function () {
           type: "glow",
           label: "Glow",
           classes: "glow-btn",
+        },
+        {
+          type: "isometric",
+          label: "Isometric",
+          classes: "iso-btn",
+          shouldHaveRoundedType: false,
         },
         {
           type: "key",
